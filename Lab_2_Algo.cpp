@@ -41,26 +41,12 @@ public:
 
 	}
 
-	bool get(int index, T& result)
-	{
-		if (index < 0 || index >= size)
-		{
-			return false;
-		}
-		else
-		{
-			result = array[index];
-			return true;
-		}
-	}
-
 	T& operator[](int index)
 	{
 		if (index < 0 || index >= size)
 		{
 			throw std::out_of_range("Zly index");
 		}
-
 		return array[index];
 	}
 
