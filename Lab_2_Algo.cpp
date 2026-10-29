@@ -127,15 +127,15 @@ int main()
 		std::cout << "\n\n";
 	}
 
-	int powtorzen = 1000;
+	int num_elements = 1000;
 	for (int i = 0; i < 11; i++)
 	{
 		std::cout << "\n";
-		std::cout << "Rozmiar: " << powtorzen << std::endl;
+		std::cout << "Rozmiar: " << num_elements << std::endl;
 		{
 			dynamic_array<int> f;
 			double max_time = 0.0;
-			for (int i = 0; i < powtorzen; i++)
+			for (int i = 0; i < num_elements; i++)
 			{
 				clock_t element_start = clock();
 				f.push_back(i);
@@ -152,7 +152,7 @@ int main()
 		{
 			dynamic_array<int> k;
 			clock_t start = clock();
-			for (int i = 0; i < powtorzen; i++)
+			for (int i = 0; i < num_elements; i++)
 			{
 				k.push_back(i);
 			}
@@ -160,10 +160,10 @@ int main()
 			double time = (end - start) / (double)CLOCKS_PER_SEC;
 			std::cout << "Czas calkowity: " << time * 1e3 << " ms " << std::endl;
 
-			double amortized_time = time / powtorzen;
+			double amortized_time = time / num_elements;
 			std::cout << "Czas zamortyzowany: " << amortized_time * 1e9 << " ns " << std::endl;
 		}
-		powtorzen *= 2;
+		num_elements *= 2;
 	}
 
 	return 0;
